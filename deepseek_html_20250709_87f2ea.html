@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mariem! 🎀</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ffc0cb, #ff69b4);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Mirror section */
+        .mirror-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .mirror-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Larger Magic Mirror */
+        .magic-mirror {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 12px solid #ff69b4;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(45deg, #ffc0cb, #ff69b4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+            animation: magicGlow 3s ease-in-out infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .magic-mirror:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.8);
+        }
+        
+        .mirror-message {
+            color: #fff;
+            font-size: 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            padding: 20px;
+            max-width: 90%;
+        }
+        
+        .mirror-message.show {
+            opacity: 1;
+        }
+        
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: slideInUp 1s ease-out;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .detailed-age {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .age-unit {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            padding: 12px;
+            border-radius: 15px;
+            min-width: 110px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .age-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .age-label {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .flirty-message {
+            font-size: 1.1rem;
+            color: #ff1493;
+            font-style: italic;
+            margin: 15px 0;
+            animation: fadeIn 2s ease-in;
+        }
+        
+        .interactive-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+        }
+        
+        .love-letter {
+            background: rgba(255, 192, 203, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            position: relative;
+            transform: scale(0);
+            transition: transform 0.5s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .love-letter.show {
+            transform: scale(1);
+        }
+        
+        .love-letter::before {
+            content: '💌';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff69b4;
+            animation: floatUp 4s linear infinite;
+        }
+        
+        /* Custom Popup Styling */
+        .custom-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 90%;
+            width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            animation: popupAppear 0.5s ease-out;
+            border: 4px solid white;
+        }
+        
+        .popup-content h3 {
+            font-family: 'Pacifico', cursive;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .popup-content p {
+            color: white;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .popup-btn {
+            background: white;
+            color: #ff1493;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .popup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: #ffecf5;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .popup-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        @keyframes popupAppear {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes magicGlow {
+            0% { box-shadow: 0 0 30px rgba(255, 105, 180, 0.5); }
+            100% { box-shadow: 0 0 50px rgba(255, 105, 180, 0.8); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .birthday-card { padding: 20px; margin: 20px; }
+            .interactive-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 200px; }
+            .magic-mirror {
+                width: 280px;
+                height: 280px;
+            }
+            .popup-content {
+                padding: 30px 20px;
+            }
+            .detailed-age {
+                gap: 10px;
+            }
+            .age-unit {
+                min-width: 100px;
+                padding: 10px;
+            }
+            .age-value {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .magic-mirror {
+                width: 250px;
+                height: 250px;
+            }
+            .mirror-message {
+                font-size: 1.3rem;
+            }
+            .title {
+                font-size: 2.2rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .love-letter {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <!-- Custom Popup Container -->
+    <div class="custom-popup" id="customPopup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">×</span>
+            <h3 id="popupTitle">Special Message!</h3>
+            <p id="popupMessage"></p>
+            <button class="popup-btn" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Happy Birthday Mariem!</h1>
+            <p class="subtitle">The most gorgeous girl turning 19 💕</p>
+        </div>
+        
+        <!-- Mirror Section with Title -->
+        <div class="mirror-section">
+            <h2 class="mirror-title">The Mirror That Never Lies</h2>
+            <div class="magic-mirror" onclick="askMagicMirror()">
+                <div class="mirror-message" id="mirrorMessage">Click me to see who's the fairest! ✨</div>
+            </div>
+        </div>
+        
+        <div class="birthday-card">
+            <!-- Detailed Age Section -->
+            <div class="detailed-age">
+                <div class="age-unit">
+                    <span class="age-value" id="years">19</span>
+                    <span class="age-label">Years</span>
+                </div>
+                <div class="age-unit">
+                    <span class="age-value" id="days">0</span>
+                    <span class="age-label">Days</span>
+                </div>
+                <div class="age-unit">
+                    <span class="age-value" id="hours">0</span>
+                    <span class="age-label">Hours</span>
+                </div>
+                <div class="age-unit">
+                    <span class="age-value" id="minutes">0</span>
+                    <span class="age-label">Minutes</span>
+                </div>
+                <div class="age-unit">
+                    <span class="age-value" id="seconds">0</span>
+                    <span class="age-label">Seconds</span>
+                </div>
+            </div>
+            
+            <div class="message">
+                Today marks another year of your incredible beauty and amazing personality! 🌟
+            </div>
+            <div class="flirty-message">
+                You're not just turning 19, you're turning heads everywhere you go! 😍✨
+            </div>
+            
+            <div class="interactive-buttons">
+                <button class="btn" onclick="showSurprise()">💝 Special Surprise</button>
+                <button class="btn" onclick="generateCompliment()">💕 Sweet Words</button>
+                <button class="btn" onclick="playMusic()">🎵 Birthday Song</button>
+            </div>
+        </div>
+        
+        <div class="love-letter" id="loveLetter">
+            <h3 style="color: #ff1493; margin-bottom: 15px;">A Special Love Letter 💌</h3>
+            <p id="letterContent" style="color: #333; line-height: 1.6; font-style: italic;">
+                "Dear beautiful Mariem, you are like a rare flower that blooms once in a lifetime. 
+                Your beauty radiates from within and lights up every heart you touch. 
+                Happy 19th birthday to the most amazing girl in the world! 💕"
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optimized for webview: minimized DOM manipulation and animations
+        function showPopup(title, message) {
+            document.getElementById('popupTitle').innerText = title;
+            document.getElementById('popupMessage').innerText = message;
+            document.getElementById('customPopup').style.display = 'flex';
+        }
+        
+        function closePopup() {
+            document.getElementById('customPopup').style.display = 'none';
+        }
+        
+        // Calculate detailed age in years, days, hours, minutes, seconds
+        function updateDetailedAge() {
+            const birthDate = new Date(2006, 9, 13); // October 13, 2006
+            const now = new Date();
+            
+            // Calculate years
+            let years = now.getFullYear() - birthDate.getFullYear();
+            
+            // Adjust if birthday hasn't occurred this year
+            if (now.getMonth() < birthDate.getMonth() || 
+                (now.getMonth() === birthDate.getMonth() && now.getDate() < birthDate.getDate())) {
+                years--;
+            }
+            
+            // Calculate last birthday
+            let lastBirthday = new Date(birthDate);
+            lastBirthday.setFullYear(now.getFullYear());
+            if (lastBirthday > now) {
+                lastBirthday.setFullYear(now.getFullYear() - 1);
+            }
+            
+            // Calculate time difference since last birthday
+            const diff = now - lastBirthday;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // Update the DOM
+            document.getElementById('years').textContent = years;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        // Floating hearts animation (optimized)
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        
+        // Magic Mirror interaction
+        function askMagicMirror() {
+            const mirrorMessage = document.getElementById('mirrorMessage');
+            const messages = [
+                "Mirror, mirror on the wall... Mariem is the fairest of them all! 👑",
+                "The mirror says: You're absolutely gorgeous, Mariem! 💎",
+                "Magic reveals: Your beauty is beyond compare! ✨",
+                "Mirror's truth: You're the most stunning girl in the world! 🌟",
+                "The mirror whispers: You're perfect just the way you are! 💕"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            mirrorMessage.innerHTML = randomMessage;
+            mirrorMessage.classList.add('show');
+            
+            setTimeout(() => {
+                mirrorMessage.classList.remove('show');
+                mirrorMessage.innerHTML = "Click me to see who's the fairest! ✨";
+            }, 3000);
+        }
+        
+        // Show surprise message
+        function showSurprise() {
+            const messages = [
+                "You're absolutely stunning, Mariem! Your smile lights up every room you walk into. Here's to another year of being the most beautiful soul inside and out! 🌹✨",
+                "Every day you become more beautiful, and today you're turning 19 years of absolute perfection! You're simply irresistible! 😘💕",
+                "Happy Birthday to the girl who makes hearts skip beats! You're not just pretty, you're absolutely breathtaking! 💖🌟",
+                "19 years of pure beauty and charm! You're like a real-life princess, and today is your special day! 👑💝"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            showPopup('Special Surprise!', randomMessage);
+        }
+        
+        // Play birthday song (visual effect only)
+        function playMusic() {
+            showPopup('Happy Birthday!', 'Playing your special birthday song! 🎶');
+        }
+        
+        // Generate compliments
+        function generateCompliment() {
+            const compliments = [
+                "Your beauty shines brighter than any star! ⭐",
+                "You're absolutely gorgeous, inside and out! 💕",
+                "Every smile from you makes the world better! 😊",
+                "You're the definition of perfection! ✨",
+                "Your eyes are like sparkling diamonds! 💎",
+                "You're sweeter than birthday cake! 🍰",
+                "You're a real-life angel! 👼",
+                "Your beauty is truly mesmerizing! 🌹"
+            ];
+            
+            const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+            showPopup('For Beautiful Mariem', randomCompliment);
+        }
+        
+        // Show love letter
+        function showLoveLetter() {
+            const loveLetter = document.getElementById('loveLetter');
+            loveLetter.classList.add('show');
+        }
+        
+        // Initialize
+        updateDetailedAge();
+        setInterval(updateDetailedAge, 1000); // Update every second
+        setInterval(createHeart, 2000);
+        
+        // Show love letter after a delay
+        setTimeout(() => {
+            showLoveLetter();
+        }, 3000);
+        
+        // Welcome message
+        setTimeout(() => {
+            showPopup('Welcome!', "Welcome to your magical birthday world, beautiful Mariem! 🎉💕 Explore all the interactive surprises!");
+        }, 1000);
+    </script>
+</body>
+</html>
