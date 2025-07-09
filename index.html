@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Mariem! 🎀</title>
+    <title>PRETTIEST  Mariem IN ALL TIME 🎂</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
         
@@ -125,6 +125,60 @@
             animation: slideInUp 1s ease-out;
             backdrop-filter: blur(10px);
             position: relative;
+        }
+        
+        /* NEW: Time since gifted section */
+        .gift-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gift-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: #ff1493;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gift-subtitle {
+            font-size: 1.1rem;
+            color: #ff1493;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gift-decoration {
+            position: absolute;
+            font-size: 4rem;
+            color: rgba(255, 20, 147, 0.1);
+            z-index: 1;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .gift-decoration:nth-child(1) {
+            top: 10px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+        
+        .gift-decoration:nth-child(2) {
+            bottom: 10px;
+            right: 20px;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
         .detailed-age {
@@ -380,6 +434,9 @@
             .age-value {
                 font-size: 1.5rem;
             }
+            .gift-title {
+                font-size: 1.6rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -399,6 +456,12 @@
             .love-letter {
                 padding: 20px;
             }
+            .gift-title {
+                font-size: 1.4rem;
+            }
+            .gift-subtitle {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -417,8 +480,8 @@
     
     <div class="container">
         <div class="header">
-            <h1 class="title">Happy Birthday Mariem!</h1>
-            <p class="subtitle">The most gorgeous girl turning 19 💕</p>
+            <h1 class="title">THE prettiest girl in all time </h1>
+            <p class="subtitle">The most gorgeous girl IN THE UNIVERSE (U HAVE TO BELIEVEE ME) 💕</p>
         </div>
         
         <!-- Mirror Section with Title -->
@@ -430,6 +493,14 @@
         </div>
         
         <div class="birthday-card">
+            <!-- NEW: Time since gifted section -->
+            <div class="gift-section">
+                <div class="gift-decoration">🎁</div>
+                <div class="gift-decoration">🎀</div>
+                <h3 class="gift-title">Time Since We Were Gifted With Your Existence</h3>
+                <p class="gift-subtitle">Every moment since you came into this world has been a gift </p>
+            </div>
+            
             <!-- Detailed Age Section -->
             <div class="detailed-age">
                 <div class="age-unit">
@@ -455,25 +526,23 @@
             </div>
             
             <div class="message">
-                Today marks another year of your incredible beauty and amazing personality! 🌟
+                incase i made u feel bad or uncomfortable im so sorry 
             </div>
             <div class="flirty-message">
-                You're not just turning 19, you're turning heads everywhere you go! 😍✨
+                i wrote what i think might make u laugh/ or cheer u abit  and i can mistake so im sorry in advance,
             </div>
             
             <div class="interactive-buttons">
-                <button class="btn" onclick="showSurprise()">💝 Special Surprise</button>
-                <button class="btn" onclick="generateCompliment()">💕 Sweet Words</button>
-                <button class="btn" onclick="playMusic()">🎵 Birthday Song</button>
+                <button class="btn" onclick="showSurprise()">💝 click me </button>
+                <button class="btn" onclick="generateCompliment()">💕 click me 2 (close and open many times to see everything)</button>
+                <button class="btn" onclick="playMusic()">click me 3</button>
             </div>
         </div>
         
         <div class="love-letter" id="loveLetter">
-            <h3 style="color: #ff1493; margin-bottom: 15px;">A Special Love Letter 💌</h3>
+            <h3 style="color: #ff1493; margin-bottom: 15px;">A letter to a  Special person 💌</h3>
             <p id="letterContent" style="color: #333; line-height: 1.6; font-style: italic;">
-                "Dear beautiful Mariem, you are like a rare flower that blooms once in a lifetime. 
-                Your beauty radiates from within and lights up every heart you touch. 
-                Happy 19th birthday to the most amazing girl in the world! 💕"
+                 Dear nigeratia, i know last few weeks were hard for u, alot of things happend unexpectedly, all of them were outside of our control<br>, all of them are forcing us to feel upset and pissed, for that im sorry i wish i could change all of that or even take it instead of u, i want u to know its not over yet, life isnt determined by THIS, you CANT give up NOW, i wont allow u too, so PLEASE STUDY MEDICINE (sorry i annyoying ), i wont push u to do anything but i just fear u will regret  it the future thats why im skeptisch a bit, so i might sound weird, for me Whatever you choose to be, as long as it brings you happiness and fulfillment, I fully support it, and i will be in ur back in whatever u choose, so thats why i was worried u would choose something u will hate later, so im sorry i was only biased towards to med, im baised what will make u happy, wheter its medicine or anything else
             </p>
         </div>
     </div>
@@ -544,11 +613,15 @@
         function askMagicMirror() {
             const mirrorMessage = document.getElementById('mirrorMessage');
             const messages = [
-                "Mirror, mirror on the wall... Mariem is the fairest of them all! 👑",
-                "The mirror says: You're absolutely gorgeous, Mariem! 💎",
-                "Magic reveals: Your beauty is beyond compare! ✨",
-                "Mirror's truth: You're the most stunning girl in the world! 🌟",
-                "The mirror whispers: You're perfect just the way you are! 💕"
+                "Mirror, mirror on the wall... Mariem is the prettiest of them all! 💕",
+                "The mirror says: You're absolutely gorgeous, Mariem!  😔",
+                "Magic reveals: Your beauty is beyond compare! ",
+                "Mirror's truth: You're the most stunning girl in the world! ",
+                "The mirror whispers: You're perfect just the way you are! 💕",
+                "The mirror confesses: the person who made this might be liking u way too much ",
+                "The mirror declars: you are going to change your destiny to what u like ",
+                "you are going to get what YOU desire and want  ",
+
             ];
             
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
@@ -558,16 +631,16 @@
             setTimeout(() => {
                 mirrorMessage.classList.remove('show');
                 mirrorMessage.innerHTML = "Click me to see who's the fairest! ✨";
-            }, 3000);
+            }, 18000);
         }
         
         // Show surprise message
         function showSurprise() {
             const messages = [
-                "You're absolutely stunning, Mariem! Your smile lights up every room you walk into. Here's to another year of being the most beautiful soul inside and out! 🌹✨",
-                "Every day you become more beautiful, and today you're turning 19 years of absolute perfection! You're simply irresistible! 😘💕",
-                "Happy Birthday to the girl who makes hearts skip beats! You're not just pretty, you're absolutely breathtaking! 💖🌟",
-                "19 years of pure beauty and charm! You're like a real-life princess, and today is your special day! 👑💝"
+                "You're absolutely THE Prettiest, YA MARIEEMMMM! not just the looks but everything about u is so adorable, how u talk how u think how u do everything bascailly its so adorable and cute",
+                "im saying this here coz i obv feel less embarrassed than writting it in chat haahahahahah",
+                "I HATE U ",
+                "I DONT LIKE FEELING LIKE I LIKE SOMEONE BCZ I GET SCARED I WILL LOSE U "
             ];
             
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
@@ -576,20 +649,20 @@
         
         // Play birthday song (visual effect only)
         function playMusic() {
-            showPopup('Happy Birthday!', 'Playing your special birthday song! 🎶');
+            showPopup('Happy Birthday!', 'i wish i had a copy of u with me in egypt😔😔,, i want her to be exactly u in identity in thoughts in mind in everything hahahaha');
         }
         
         // Generate compliments
         function generateCompliment() {
             const compliments = [
-                "Your beauty shines brighter than any star! ⭐",
-                "You're absolutely gorgeous, inside and out! 💕",
-                "Every smile from you makes the world better! 😊",
-                "You're the definition of perfection! ✨",
-                "Your eyes are like sparkling diamonds! 💎",
-                "You're sweeter than birthday cake! 🍰",
-                "You're a real-life angel! 👼",
-                "Your beauty is truly mesmerizing! 🌹"
+                "YOURE A MORON",
+                " i hate u ",
+                "Every smile from you makes the world better! ",
+                "You're the definition of perfection ",
+                "Your eyes are the prettiest i have ever seen ",
+                "You're sweeter than 300kg of kunfa",
+                "You're a literal angel (funny one too )",
+                "Your beauty is so addicting to look at "
             ];
             
             const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
